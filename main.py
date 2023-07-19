@@ -57,7 +57,7 @@ def generatePayload(key,bc_version,isGCM,echoType="tomcatecho"):
 
     # process = subprocess.Popen(project_dir+"\\payload\\jre8\\bin\\java.exe -jar "+project_dir+"\\payload\\bc"+bc_version+"_shiro"+shiro_version+".jar "+key, stderr=subprocess.PIPE)
     # print(project_dir+"\\payload\\jre8\\bin\\java.exe -jar "+project_dir+"\\payload\\bc"+bc_version+"_shiro"+shiro_version+".jar "+key)
-    output = subprocess.check_output(project_dir+"\\payload\\jre8\\bin\\java.exe -jar "+project_dir+"\\payload\\bc"+bc_version+"_shiro"+shiro_version+".jar "+key,stderr=subprocess.DEVNULL, shell=True)
+    output = subprocess.check_output("java -jar "+project_dir+"\\payload\\bc"+bc_version+"_shiro"+shiro_version+".jar "+key,stderr=subprocess.DEVNULL, shell=True)
     # output, _ = process.communicate()
     # print (result)
     return (output.decode().replace("\r\n",""))
